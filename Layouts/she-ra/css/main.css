@@ -1,0 +1,261 @@
+/*
+    Colors:
+        Light pink: #efc3f5
+        Dark pink: #faa6ff
+        Light purple: #7353ba
+        Dark purple: #2f195f
+        Blackish blue: #0f1020
+
+    Sizes:
+        Images:
+            Logo size: 250px
+            She-Ra size: 200px (D), 150px (M)
+            Hordak size: 300px (D), 200px (T), 150px (M)
+            Shift-Wind size: 150px
+            He-Man size: 100px
+            Bow size: 100px
+        Padding:
+            Left-aside: 20px 0 (D), 40px (M)
+            Hordak: 20px 40px (D), 0 30px (T & M)
+            Ally: 20px 40px (D), 20px (T)
+        Column size:
+            Body: 200px auto (D)
+            Odd child ally: 200px auto (D)
+            Even child ally: auto 200px (D)
+            Navigation bar: 90% 10% (T)
+            Ally first child: 200px auto (T)
+            Hordak: 1fr 2fr (T), 1fr 3fr (M)
+            Left aside: 1fr 1fr (M)
+        Row size:
+            Main: 150px auto (D), 150px 250px auto (T), 200px 250px auto (M)
+
+*/
+
+/* General */
+main .allies .ally:first-child img {
+    width: 150px;
+}
+
+main .allies .ally:not(:first-child) img {
+    width: 100px;
+}
+
+main {
+    display: grid;
+    grid-area: main;
+}
+
+main .navigation-bar {
+    display: grid;
+    grid-area: navigation;
+    justify-items: center;
+    align-content: center;
+    background-color: #7353ba;
+    border-bottom: solid 5px #2f195f;
+}
+
+main .navigation-bar img {
+    width: 250px;
+}
+
+main .hordak {
+    display: grid;
+    grid-area: hordak;
+    justify-items: center;
+    text-align: center;
+    background-color: #0f1020;
+    color: white;
+}
+
+main .allies {
+    display: grid;
+    grid-area: allies;
+}
+
+main .allies .ally {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.left-aside {
+    display: grid;
+    grid-area: left-aside;
+    justify-items: center;
+    background-color: #efc3f5;
+}
+
+/* General ends here */
+
+@media screen and (max-width: 480px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "main"
+            "left-aside";
+    }
+    .left-aside {
+        grid-template-areas:
+            "shera links";
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        font-size: 1.5em;
+        padding: 40px;
+    }
+    .left-aside .links {
+        grid-area: links;
+    }
+    .left-aside .links .link {
+        margin: 20px 0;
+    }
+    .left-aside img {
+        grid-area: shera;
+        width: 150px;
+    }
+    main {
+        grid-template-areas:
+            "navigation"
+            "hordak";
+        grid-template-rows: 200px 250px auto;
+    }
+    main .navigation-bar .menu-icon {
+        display: none;
+    }
+    main .hordak {
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+        padding: 0 30px;
+    }
+    main .hordak img {
+        width: 150px;
+    }
+    main .allies {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+    main {
+        grid-template-areas:
+            "navigation"
+            "hordak"
+            "allies";
+        grid-template-rows: 150px 250px auto;
+    }
+    .left-aside {
+        display: none;
+    }
+    main .navigation-bar {
+        grid-template-columns: 90% 10%;
+    }
+    main .navigation-bar .menu-icon {
+        font-size: 2em;
+        margin-right: 40px;
+        transition: all .5s ease-in;
+    }
+    main .navigation-bar .menu-icon:hover {
+        color: #F4EC6E;
+        transform: perspective(500px) rotateX(45deg);
+        cursor: pointer;
+    }
+    main .hordak {
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        padding: 0 30px;
+    }
+    main .hordak img {
+        width: 200px;
+    }
+    main .allies {
+        grid-template-areas:
+            "swift-wind swift-wind"
+            "he-man bow";
+    }
+
+    main .allies .ally {
+        padding: 20px;
+    }
+
+    main .allies .ally:first-child {
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-area: swift-wind;
+        background-color: #faa6ff;
+        border-bottom: solid 1px black;
+    }
+
+    main .allies .ally:nth-child(2) {
+        grid-area: bow;
+        background-color: #efc3f5;
+    }
+
+    main .allies .ally:nth-child(3) {
+        grid-area: he-man;
+        background-color: #faa6ff;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "left-aside main";
+        grid-template-columns: 200px auto;
+    }
+    .left-aside {
+        font-size: 1.6em;
+        border-right: solid 5px #faa6ff;
+        padding: 20px 0;
+    }
+    .left-aside img {
+        width: 200px;
+        align-self: flex-end;
+    }
+    main {
+        grid-template-areas:
+            "navigation navigation navigation navigation"
+            "hordak allies allies allies";
+        grid-template-rows: 150px auto;
+    }
+    main .navigation-bar .menu-icon {
+        display: none;
+    }
+    main .hordak {
+        align-content: flex-start;
+        padding: 20px 40px;
+        font-size: 1.5em;
+    }
+    main .hordak img {
+        width: 300px;
+    }
+
+    main .allies {
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    main .allies .ally img {
+        grid-area: ally-img;
+    }
+
+    main .allies .ally p {
+        grid-area: ally-paragraph;
+    }
+
+    main .allies .ally:nth-child(odd) {
+        grid-template-areas:
+            "ally-img ally-paragraph";
+        grid-template-columns: 200px auto;
+        background-color: #faa6ff;
+    }
+
+    main .allies .ally:nth-child(even) {
+        grid-template-areas:
+            "ally-paragraph ally-img";
+        grid-template-columns: auto 200px;
+        background-color: #efc3f5;
+    }
+
+    main .allies .ally {
+        padding: 20px 40px;
+    }
+}
