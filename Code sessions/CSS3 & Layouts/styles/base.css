@@ -1,0 +1,274 @@
+/* Setup layout of front page within the body */
+body {
+  display: grid;
+  grid-template-rows:
+    100px /* Navigation bar */
+    800px /* Hero section */
+    500px /* Information section */
+    auto /* Shout section first */
+    auto /* Shout section second */
+    400px /* Book now section */
+}
+
+/* Navigation bar ++ */
+nav {
+  display: grid;
+  width: 100%;
+  background-color: #63B4D1;
+}
+
+nav .nav-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+nav .nav-links .nav-link {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+nav .nav-links .nav-link:hover {
+  cursor: pointer;
+}
+
+nav .nav-links .nav-link:hover:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: white;
+  animation: swipe-up .3s ease-in-out 1 both;
+}
+
+nav .nav-links .nav-link .nav-link-text {
+  display: grid;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+/* Navigation bar -- */
+
+/* Hero section ++ */
+.hero-section {
+  background-image: url(/resources/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* Hero section -- */
+
+/* Info section ++ */
+.info-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-content: center;
+  background-color: #63B4D1;
+  border-top: solid 6px #7699D4;
+  overflow: hidden;
+}
+
+.info-section .info-section-item {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: 250px;
+  text-align: center;
+  top: -500px;
+  opacity: 0;
+}
+
+.info-section-item img {
+  border-radius: 50%;
+  background-color: white;
+  padding: 10px;
+}
+
+.info-section-item .info-section-item-title {
+  margin: 15px 0;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.from-top {
+  animation: from-top .8s ease-in-out 1 both;
+}
+/* Info section -- */
+
+/* Shout out section ++ */
+.shout-out-section {
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 50px 0;
+}
+
+.shout-out-section.left {
+  grid-template-columns: 1fr 2fr;
+}
+
+.shout-out-section.right {
+  grid-template-columns: 2fr 1fr;
+}
+
+.shout-out-section img {
+  position: relative;
+  height: 400px;
+}
+
+.shout-out-section.right img {
+  right: -500px;
+}
+
+.shout-out-section.left img {
+  left: -500px;
+
+}
+
+.shout-out-section-info {
+  position: relative;
+  top: -500px;
+}
+
+.shout-out-section-item-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.purple {
+  background-color: #9448BC;
+  border-top: solid 6px #480355;
+  color: white;
+}
+
+.slide-from-left {
+  animation: slide-from-left .8s ease-in-out 1 both;
+}
+
+.slide-from-right {
+  animation: slide-from-right .8s ease-in-out 1 both;
+}
+/* Shout out section -- */
+
+/* Book now section ++ */
+.book-now-section {
+  background-color: #90FCF9;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+/* Book now section -- */
+
+/* Button section ++ */
+button {
+  position: relative;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: solid 3px white;
+  font-family: 'Bitter', serif;
+  font-variant: small-caps;
+  font-size: 1.5em;
+  color: white;
+  transition: transform .8s;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: perspective(400px) rotateY(10deg) scale(1.1);
+}
+
+button:hover:after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  left: -3px;
+  bottom: -3px;
+  background-image:
+    linear-gradient(#7699D4, #7699D4),
+    linear-gradient(#7699D4, #7699D4),
+    linear-gradient(#7699D4, #7699D4),
+    linear-gradient(#7699D4, #7699D4);
+  background-size: 0 3px, 3px 0, 0 3px, 3px 0;
+  background-position: top left, right top, right bottom, left bottom;
+  background-repeat: no-repeat;
+  animation: button-hover 1s linear 1 both;
+}
+/* Button section -- */
+
+/* Animations ++ */
+@keyframes swipe-up {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes from-top {
+  from {
+    opacity: 0;
+    top: -500px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes slide-from-left {
+  0% {
+    left: -500px;
+  }
+  60% {
+    left: 100px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide-from-right {
+  0% {
+    right: -500px;
+  }
+  60% {
+    right: 100px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes button-hover {
+  0% {
+    background-size: 0 3px, 3px 0, 0 3px, 3px 0;
+  }
+  25% {
+    background-size: 100% 3px, 3px 0, 0 3px, 3px 0;
+  }
+  50% {
+    background-size: 100% 3px, 3px 100%, 0 3px, 3px 0;
+  }
+  75% {
+    background-size: 100% 3px, 3px 100%, 100% 3px, 3px 0;
+  }
+  100% {
+    background-size: 100% 3px, 3px 100%, 100% 3px, 3px 100%;
+  }
+}
+/* Animations -- */

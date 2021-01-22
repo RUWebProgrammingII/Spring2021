@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitter:wght@400;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Bitter', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Alfa Slab One', cursive;
+}
+
+.current-scroll {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+}
