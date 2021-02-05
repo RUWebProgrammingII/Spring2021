@@ -1,0 +1,126 @@
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(/resources/backsplash.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1196px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.drop-zone {
+  position: relative;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  width: 900px;
+  height: 700px;
+  border: solid 3px lightgray;
+  background-color: white;
+}
+
+.drop-zone .img-thumbnail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+  background-size: cover;
+}
+
+.drop-zone::after {
+  position: absolute;
+  content: '\f382';
+  font-size: 5em;
+  color: black;
+  top: calc(50% - 50px);
+  left: calc(50% - 40px);
+}
+
+.drop-zone.blinking::after {
+  animation: blink .7s infinite ease-in-out both alternate;
+}
+
+.drop-zone.loading::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.drop-zone.loading::after {
+  position: absolute;
+  content: '\f110';
+  font-size: 5em;
+  color: black;
+  top: calc(50% - 50px);
+  left: calc(50% - 40px);
+  z-index: 10;
+  animation: spin 1s infinite linear;
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  border: solid 2px black;
+  font-size: 1.5em;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-variant: all-small-caps;
+  transition: border .2s;
+}
+
+.button:hover {
+  cursor: pointer;
+  border: solid 2px white;
+  animation: skew .3s ease-in-out .2s 1 both;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes skew {
+  from {
+    transform: skewX(0deg)
+  }
+  to {
+    transform: skewX(-10deg)
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
