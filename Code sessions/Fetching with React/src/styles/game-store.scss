@@ -1,0 +1,17 @@
+.game-store {
+  padding: 20px 50px;
+  .game-store-info {
+    display: grid;
+    grid-template-columns: 60px auto;
+    align-items: center;
+    img {
+      width: 50px;
+    }
+  }
+
+  .game-store-deals {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,32 @@
+.game-deal-item {
+  border: 1px solid #eee;
+  padding: 30px;
+  text-align: center;
+  width: 260px;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid #aaa;
+  }
+
+  .thumbnail {
+    height: 265px;
+    width: 200px;
+    border-radius: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  .title {
+    font-weight: bold;
+    font-size: 1.3em;
+    word-break: break-word;
+  }
+  .price {
+    color: red;
+    text-decoration: line-through;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+}
