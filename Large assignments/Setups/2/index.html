@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5 Canvas Structure</title>
+        <style media="screen">
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                padding: 20px;
+            }
+            #my-canvas {
+                background-color: rgba(155, 155, 155, 0.2);
+                box-shadow: 1px 1px 1px;
+                margin: 0 auto;
+                display: block;
+            }
+            .icon {
+                position: relative;
+                display: inline-block;
+                font-size: 4em;
+                float: right;
+                width: 100px;
+                top: 15px;
+                transition: color .5s;
+            }
+            .icon:hover {
+                color: orange;
+                cursor: pointer;
+            }
+            .icon.selected {
+                color: yellow;
+            }
+            .navbar {
+                height: 100px;
+                background-color: rgba(50, 100, 200, 0.5);
+                border-bottom: solid 6px rgba(50, 100, 200, 1);
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="icon selected" data-shape="rectangle">
+                <i class="fa fa-square-o" aria-hidden="true"></i>
+            </div>
+            <div class="icon" data-shape="star">
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+        </nav>
+        <div class="container">
+            <canvas id="my-canvas" width="800" height="600">
+                Not supported
+            </canvas>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" charset="utf-8"></script>
+        <script src="shapes.js" charset="utf-8"></script>
+        <script src="drawio.js" charset="utf-8"></script>
+    </body>
+</html>
