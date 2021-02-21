@@ -1,0 +1,75 @@
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul.nav-links li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.container-custom {
+  padding-top: 30px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.category {
+  display: inline-block;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-image: linear-gradient(to bottom right, white, blue);
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 50px 3fr 1fr;
+  padding: 10px 0;
+  border-top: solid 5px #DA2B27;
+}
+
+.game .place {
+  align-self: center;
+  font-size: 3em;
+}
+
+.game > div:last-child {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.game .img {
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar.bg-dark {
+  color: white;
+}
+
+.navbar.bg-dark a {
+  color: white;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
