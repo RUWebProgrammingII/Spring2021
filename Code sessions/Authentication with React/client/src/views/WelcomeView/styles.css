@@ -1,0 +1,19 @@
+.signin-container {
+  height: 100%;
+  width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signin-container img {
+  width: 200px;
+  transition: transform .5s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.signin-container img:hover {
+  transform: scale(1.1);
+}

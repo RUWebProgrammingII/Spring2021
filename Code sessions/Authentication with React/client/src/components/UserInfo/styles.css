@@ -1,0 +1,14 @@
+.userInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.userInfo img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}

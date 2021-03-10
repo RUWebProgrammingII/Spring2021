@@ -1,0 +1,19 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 9;
+  background-color: orange;
+  padding: 25px 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+}
