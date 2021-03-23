@@ -3,7 +3,7 @@
   API information.
 
   Base URL: https://api.deepai.org/api/colorizer
-  Key: f8ee0dc3-edbd-458c-b333-c1718f8e068e
+  Key: <obtain-your-own-key>
 
 */
 
@@ -34,7 +34,7 @@ function colorizeImage(data) {
   fetch('https://api.deepai.org/api/colorizer', {
     method: 'POST',
     headers: {
-      'api-key': 'f8ee0dc3-edbd-458c-b333-c1718f8e068e'
+      'api-key': '<obtain-your-own-key>'
     },
     body: formData
   }).then(result => {
