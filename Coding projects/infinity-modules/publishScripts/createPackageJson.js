@@ -12,6 +12,8 @@ const createDirectory = directoryPath => {
 					if (err) { throw new Error(err); }
 					resolve();
 				});
+			} else {
+				resolve();
 			}
 		});
 	});
