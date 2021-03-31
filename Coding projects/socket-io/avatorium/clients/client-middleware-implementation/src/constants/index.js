@@ -1,0 +1,7 @@
+export const ADD_SESSION = 'ADD_SESSION';
+export const USERS = 'USERS';
+export const CONNECTED_USER = 'CONNECTED_USER';
+export const DISCONNECTED_USER = 'DISCONNECTED_USER';
+
+export const CONNECT_SOCKET = 'CONNECT_SOCKET';
+export const SOCKET_EMISSION = 'SOCKET_EMISSION';

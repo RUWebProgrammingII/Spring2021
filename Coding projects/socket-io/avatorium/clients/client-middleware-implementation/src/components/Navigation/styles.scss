@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.navigation {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: $gunMetal;
+  height: 100px;
+  .avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: solid 1px $ivory;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

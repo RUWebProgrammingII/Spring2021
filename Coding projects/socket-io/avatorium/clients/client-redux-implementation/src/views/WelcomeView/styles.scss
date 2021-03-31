@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+
+.welcome-view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .default-avatar {
+    height: 200px;
+    width: 200px;
+    background-size: contain;
+  }
+
+  .input-container {
+    margin-top: 20px;
+    width: 300px;
+    label {
+      font-weight: bold;
+      font-size: 1.3em;
+      display: block;
+    }
+    input {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+}

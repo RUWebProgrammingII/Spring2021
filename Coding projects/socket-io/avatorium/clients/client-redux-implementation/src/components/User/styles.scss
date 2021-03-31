@@ -1,0 +1,27 @@
+.user {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+  &:hover {
+    animation: shake .2s infinite;
+  }
+}
+
+@keyframes shake {
+  0% {
+    left: 0;
+  }
+  33.3% {
+    left: -10px;
+  }
+  66.6% {
+    left: 10px;
+  }
+  100% {
+    left: 0;
+  }
+}

@@ -1,0 +1,13 @@
+@import "variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root, .container {
+  height: 100%;
+}
+
+body {
+  background-color: $blush;
+}

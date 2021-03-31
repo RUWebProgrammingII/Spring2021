@@ -1,0 +1,14 @@
+@import "../../styles/variables.scss";
+
+.button {
+  background-color: $gunMetal;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border: solid 1px $ivory;
+  transition: background-color .5s;
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($gunMetal, 10%);
+  }
+}
